@@ -11,7 +11,7 @@
       const productSize = cartItem.querySelector('.size').textContent.trim();
       const productColor = cartItem.querySelector('.color').textContent.trim();
 
-      fetch('http://127.0.0.1:5000/remove-from-cart', {
+      fetch('https://alsouraya.onrender.com/remove-from-cart', {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ product_id: productId, size: productSize, color: productColor})

@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
             data[key] = value;
         });
 
-        fetch("http://127.0.0.1:5000/finalize", {
+        fetch("https://alsouraya.onrender.com/finalize", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -8,7 +8,7 @@ if (event.target.classList.contains('delete-product')) {
     const button = event.target;
     const productId = button.getAttribute('data-product-id');
 
-    fetch('http://127.0.0.1:5000/delete-product', {
+    fetch('https://alsouraya.onrender.com/delete-product', {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ product_id: productId })
@@ -35,7 +35,7 @@ if (event.target.classList.contains('update-product')) {
 
     alert('not functional waiting for update')
     return 0;
-    fetch('http://127.0.0.1:5000/update-product', {
+    fetch('https://alsouraya.onrender.com/update-product', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ product_id: productId })
@@ -58,7 +58,7 @@ if (event.target.classList.contains('update-product')) {
 categorySelect.addEventListener('change', () => { //filter
 const selectedCategory = categorySelect.value;
 
-fetch('http://127.0.0.1:5000/admin-filter-product', {
+fetch('https://alsouraya.onrender.com/admin-filter-product', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ category: selectedCategory })
