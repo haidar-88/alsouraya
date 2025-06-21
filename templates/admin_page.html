@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/as.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_page.css') }}">
+
+    <title>admin view</title>
+</head>
+
+<body>
+    <a href="{{ url_for('admin.add_product') }}">
+        <button class="add-product-button">Add New Products</button>
+    </a>
+    <a href="{{ url_for('admin.view_orders') }}">
+        <button class="view-orders-button">View Orders</button>
+    </a>
+    <a href="{{ url_for('admin.products_page') }}">
+        <button class="view-products-button">View Website Products</button>
+    </a>
+</body>
+
+</html>

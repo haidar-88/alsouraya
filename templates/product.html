@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Al Souraya Shop</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/product.css') }}" />
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/as.png') }}" />
+</head>
+<body>
+
+  <!-- Mobile Menu Button -->
+  <div class="mobile-menu-button">
+    <button id="open-menu">☰ Menu</button>
+  </div>
+
+  <!-- Mobile Side Menu -->
+  <div id="side-menu" class="side-menu">
+    <button id="close-menu" class="close-btn">&times;</button>
+    <select id="category-filter-mobile">
+      <option value="">All Categories</option>
+      {% for category in categories %}
+        <option value="{{ category }}">{{ category }}</option>
+      {% endfor %}
+    </select>
+    <a href="{{ url_for('user.cart') }}">🛒 Cart</a>
+    <a href="{{ url_for('user.profile') }}">👤 Profile</a>
+    <a href="{{ url_for('user.contact') }}">📞 Contact</a>
+  </div>
+
+  <!-- Desktop Filter Bar -->
+  <div class="filter-bar">
+    <select id="category-filter">
+      <option value="">All Categories</option>
+      {% for category in categories %}
+        <option value="{{ category }}">{{ category }}</option>
+      {% endfor %}
+    </select>
+    <div class="action-buttons">
+      <a href="{{ url_for('user.cart') }}"><button>🛒</button></a>
+      <a href="{{ url_for('user.profile') }}"><button>👤</button></a>
+      <a href="{{ url_for('user.contact') }}"><button>📞</button></a>
+    </div>
+  </div>
+
+  <!-- Product List -->
+  <div id="product-list">
+    {% for product in products %}
+      <div class="product-card">
+        <h3>{{ product.category }}</h3>
+        <div class="product-details">
+          <div class="product-info">
+            <p>Sizes</p>
+            <div class="size-options">
+              {% for size in product.sizes %}
+                <button class="size-option" data-size="{{ size }}">{{ size }}</button>
+              {% endfor %}
+            </div>
+
+            <p>Colors</p>
+            <div class="color-options">
+              {% for color in product.colors %}
+                <button class="color-option" data-color="{{ color }}">{{ color }}</button>
+              {% endfor %}
+            </div>
+
+            <p>${{ product.unit_price }}</p>
+          </div>
+
+          <div class="product-image">
+            <img src="{{ product.image_path[0] }}" alt="Product Image" />
+            <div class="view-images-button">
+              <a href="/product-images/{{ product.product_id }}">
+                <button id="view-images">View Colors</button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <button class="add-to-cart" data-product-id="{{ product.product_id }}">Add to Cart</button>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <script src="{{ url_for('static', filename='js/cart.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/view_orders.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/as.png') }}">
+</head>
+<body>
+    <h1>Order List</h1>
+
+    {% if orders %}
+        {% for order in orders %}
+            <div class="order-card">
+                <h2>Order #{{ order.order_id }}</h2>
+                <p><strong>Username:</strong> {{ order.username }}</p>
+                <p><strong>Phone:</strong> {{ order.phone }}</p>
+                <p><strong>City:</strong> {{ order.city }}</p>
+                <p><strong>Address:</strong> {{ order.address }}</p>
+                <p><strong>Building:</strong> {{ order.building }}</p>
+                <p><strong>Floor:</strong> {{ order.floor }}</p>
+                <p><strong>Email:</strong> {{ order.email }}</p>
+                <p><strong>Total:</strong> ${{ order.total_price }}</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Unit Price</th>
+                            <th>Size</th>
+                            <th>Color</th>
+                            <th>Image</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in order['items'] %}
+                        <tr>
+                            <td>{{ item.category }}</td>
+                            <td>${{ item.unit_price }}</td>
+                            <td>{{ item.size }}</td>
+                            <td>{{ item.color }}</td>
+                            <td><img src="{{ item.image_path }}" alt="product_image"></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No orders found.</p>
+    {% endif %}
+
+</body>
+</html>

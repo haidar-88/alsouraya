@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/as.png') }}">
+</head>
+<body>
+    <div class="cart-container">
+        <h1>Your Cart</h1>
+
+        {% if cart %}
+            <div class="cart-items"  id="cart">
+                {% for item in cart %}
+                    <div class="cart-item">
+                        <img src="{{ item.image_path }}" alt="Product Image">
+                        <div class="info">
+                            <h3 class="category">{{ item.category }}</h3>
+                            <p>${{ item.unit_price }}</p>
+                            <p><strong>Size:</strong> <span class="size">{{ item.size }}</span></p>
+                            <p><strong>Color:</strong> <span class="color">{{ item.color }}</span></p>
+                        </div>
+                        <button class="remove-from-cart" data-product-id="{{ item.product_id }}">🗑</button>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="cart-total">
+                <h2>Total: ${{ total }}</h2>
+            </div>
+            <div class="checkout-button">
+                <form action="{{ url_for('user.checkout') }}" method="GET">
+                    <button type="submit">Proceed to Checkout</button>
+                </form>
+            </div>
+
+        {% else %}
+            <p class="empty">Your cart is empty.</p>
+        {% endif %}
+    </div>
+
+    <script src="{{ url_for('static', filename='js/remove_cart.js') }}"></script>
+</body>
+</html>

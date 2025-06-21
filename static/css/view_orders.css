@@ -1,0 +1,138 @@
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f9f9f9;
+  color: #333;
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+/* Order card container */
+.order-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.order-card h2 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.order-card p {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Table styles - desktop */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 15px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 0.95rem;
+}
+
+th {
+  background: #eee;
+  font-weight: 600;
+  color: #444;
+}
+
+table td img {
+  max-width: 70px;
+  max-height: 70px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  body {
+    margin: 10px;
+  }
+
+  .order-card {
+    padding: 15px;
+    margin-bottom: 25px;
+  }
+
+  /* Make table elements block */
+  table, thead, tbody, th, td, tr {
+    display: block;
+    width: 100%;
+  }
+
+  /* Hide table header */
+  thead tr {
+    display: none;
+  }
+
+  tbody tr {
+    margin-bottom: 20px;
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid #ddd;
+  }
+
+  tbody tr td {
+    position: relative;
+    padding-left: 50%;
+    text-align: left;  /* changed from right to left */
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+  }
+
+  tbody tr td:last-child {
+    border-bottom: 0;
+  }
+
+  tbody tr td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45%;
+    padding-left: 10px;
+    font-weight: 600;
+    text-align: left;
+    white-space: nowrap;
+    color: #555;
+  }
+
+  tbody tr td img {
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: contain;
+    position: static;
+    margin: 0 auto;
+    display: block;
+    padding-left: 0;
+  }
+}
+

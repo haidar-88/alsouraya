@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/checkout.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/as.png') }}">
+</head>
+<body>
+    <div class="checkout-container">
+        <h1>Checkout</h1>
+        <form id="checkout-form">
+            <label>Phone Number (8-digits only, no spaces)</label>
+            <input type="text" name="phone" required>
+
+            <label>City</label>
+            <input type="text" name="city" required>
+
+            <label>Address</label>
+            <input type="text" name="address" required>
+
+            <label>Building Name</label>
+            <input type="text" name="building" required>
+
+            <label>Floor Number</label>
+            <input type="text" name="floor" required>
+
+            <label>Email</label>
+            <input type="email" name="email" required>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/checkout.js') }}"></script>
+</body>
+</html>

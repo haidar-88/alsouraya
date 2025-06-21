@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us | Al Souraya</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/as.png') }}">
+
+</head>
+<body>
+
+
+    <div class="nav-bar">
+    <div class="left-buttons">
+        <a href="{{ url_for('user.cart') }}">
+        <button class="go-to-cart">🛒</button>
+        </a>
+        <a href="{{ url_for('user.profile') }}">
+        <button class="profile-button">👤</button>
+        </a>
+    </div>
+
+    <div class="right-buttons">
+        <a href="{{ url_for('user.products_page') }}">
+        <button class="products-button">Back to Shop</button>
+        </a>
+    </div>
+    </div>
+
+
+    <div id="fields-container">
+
+        <a class="social-tags" href="https://wa.me/9613148034"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a class="social-tags" href="https://www.instagram.com/al_souraya/?hl=en"><i class="fab fa-instagram"></i> Instagram</a>
+        <a class="social-tags" href="mailto:example@example.com"><i class="fas fa-envelope"></i> Send an Email</a>
+
+    </div>
+</body>
+</html>

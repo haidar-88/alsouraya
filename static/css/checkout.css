@@ -1,0 +1,113 @@
+.checkout-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 0.03em; /* slightly tighter */
+  font-size: 1.8rem;      /* smaller font size */
+  max-width: 280px;       /* limit max width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form label {
+  display: block;
+  margin: 15px 0 6px;
+  font-weight: 600;
+  color: #444;
+  font-size: 1rem;
+}
+
+
+form input:focus {
+  border-color: #28a745;
+  outline: none;
+  box-shadow: 0 0 6px rgba(40, 167, 69, 0.4);
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  letter-spacing: 0.05em;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.checkout-container {
+  max-width: 400px;
+  width: 90%;           /* make container shrink on small screens */
+  margin: 40px auto;
+  padding: 25px 20px;   /* add horizontal padding */
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;  /* include padding in width */
+}
+
+form input {
+  width: 100%;
+  max-width: 100%;      /* make sure input never exceeds container */
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;  /* include padding in input width */
+}
+
+/* Also keep your responsive tweaks */
+@media (max-width: 480px) {
+  .checkout-container {
+    margin: 20px 15px;
+    padding: 20px 15px;
+    width: 100%;
+  }
+}
+
+/* Responsive tweaks */
+.checkout-container {
+  max-width: 500px;   /* desktop max width */
+  width: 100%;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Mobile styles: smaller width and padding */
+@media (max-width: 600px) {
+  .checkout-container {
+    max-width: 320px;  /* smaller on mobile */
+    padding: 20px 15px;
+    margin: 20px auto;
+  }
+
+  .checkout-container h1 {
+    font-size: 1.7rem;
+  }
+
+  form input {
+    padding: 12px 10px;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
+
