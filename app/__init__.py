@@ -25,10 +25,8 @@ def create_app():
     db.init_app(app)
 
     with app.app_context():
-        db.reflect()
-        db.drop_all()
         db.create_all()
-
+        
     from app.controller import register_controller
     register_controller(app)
 
